@@ -137,18 +137,15 @@
       border: 2px solid #eee;
     }
 
-    /* Floating quote/chat buttons */
-    .quote-chat-container {
+    /* Get a Quote Button Styles */
+    .quote-btn-wrapper {
       position: fixed;
       bottom: 30px;
-      right: 32px;
-      display: flex;
-      align-items: center;
+      right: 120px; /* Move it more left of the agent button */
       z-index: 1001;
-      gap: 130px; /* <<< Increased space between buttons */
     }
     .quote-btn {
-      background: linear-gradient(90deg, #25292c 0%, #232323 100%);
+      background: linear-gradient(90deg, #232323 0%, #41484e 100%);
       color: #fff;
       border: none;
       border-radius: 22px;
@@ -173,7 +170,7 @@
       margin-left: 2px;
     }
     @media (max-width: 900px) {
-      .quote-chat-container { right: 5vw; bottom: 16px; gap: 60px; }
+      .quote-btn-wrapper { right: 80px; bottom: 16px; }
       .quote-btn { padding: 7px 10px; font-size: 12px; }
       .arrow-right { font-size: 12px; }
     }
@@ -226,29 +223,49 @@
   </section>
 
   <!-- Bottom Right "Get a Quote" Button next to Chatbase -->
-  <div class="quote-chat-container">
+  <div class="quote-btn-wrapper">
     <button class="quote-btn" onclick="openChatBaseAgent()">
       <span>💬 Get a Quote</span>
       <span class="arrow-right">&#8594;</span>
     </button>
-    <!-- The chat agent button will appear to the right of this -->
   </div>
 
   <!-- quoteX Agent Embed: Paste your widget script below -->
   <script>
     // Function to programmatically open Chatbase agent
     function openChatBaseAgent() {
-      // Try to open the chatbase widget (works if embed loads successfully)
       if (window.Chatbase && typeof window.Chatbase.open === "function") {
         window.Chatbase.open();
       } else {
-        // fallback: click the chat icon if Chatbase exposes it
+        // fallback: try clicking the chat icon if Chatbase exposes it
         let chatBtn = document.querySelector('iframe, .chatbase-button, [id^="chatbase"]');
         if (chatBtn) chatBtn.click();
       }
     }
     // Chatbase Embed
-    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="IcQ34S48JAlRm8kGLMg0a";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    (function(){
+      if(!window.chatbase||window.chatbase("getState")!=="initialized"){
+        window.chatbase=(...arguments)=>{
+          if(!window.chatbase.q){window.chatbase.q=[]}
+          window.chatbase.q.push(arguments)
+        };
+        window.chatbase=new Proxy(window.chatbase,{
+          get(target,prop){
+            if(prop==="q"){return target.q}
+            return(...args)=>target(prop,...args)
+          }
+        })
+      }
+      const onLoad=function(){
+        const script=document.createElement("script");
+        script.src="https://www.chatbase.co/embed.min.js";
+        script.id="IcQ34S48JAlRm8kGLMg0a";
+        script.domain="www.chatbase.co";
+        document.body.appendChild(script)
+      };
+      if(document.readyState==="complete"){onLoad()}
+      else{window.addEventListener("load",onLoad)}
+    })();
   </script>
 </body>
 </html>
