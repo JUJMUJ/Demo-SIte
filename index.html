@@ -217,5 +217,52 @@
       else{window.addEventListener("load",onLoad)}
     })();
   </script>
+  <!-- Floating Chat Button -->
+<div id="chat-now-button" onclick="scrollToChat()" style="
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  background: linear-gradient(135deg, #00ff88, #00bfff);
+  color: black;
+  font-weight: bold;
+  padding: 12px 18px;
+  border-radius: 30px;
+  box-shadow: 0 0 20px rgba(0,255,136,0.6);
+  cursor: pointer;
+  z-index: 1000;
+  font-family: 'Montserrat', sans-serif;
+  transition: transform 0.2s ease;
+">
+  💬 Get a Quote
+</div>
+
+<script>
+  function scrollToChat() {
+    const chatIcon = document.querySelector('#IcQ34S48JAlRm8kGLMg0a');
+    if (chatIcon) {
+      chatIcon.click(); // Trigger the chat
+    }
+  }
+</script>
+
+<!-- Chatbase Glow Animation -->
+<style>
+  #IcQ34S48JAlRm8kGLMg0a {
+    animation: glowPulse 2s infinite;
+  }
+
+  @keyframes glowPulse {
+    0% {
+      box-shadow: 0 0 0px rgba(0, 255, 136, 0.0);
+    }
+    50% {
+      box-shadow: 0 0 12px rgba(0, 255, 136, 0.6);
+    }
+    100% {
+      box-shadow: 0 0 0px rgba(0, 255, 136, 0.0);
+    }
+  }
+</style>
+
 </body>
 </html>
