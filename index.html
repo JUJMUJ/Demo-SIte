@@ -141,23 +141,23 @@
     .quote-btn-wrapper {
       position: fixed;
       bottom: 30px;
-      right: 120px; /* Move it more left of the agent button */
+      right: 120px; /* Positioned left of chat agent */
       z-index: 1001;
     }
     .quote-btn {
       background: linear-gradient(90deg, #232323 0%, #41484e 100%);
       color: #fff;
       border: none;
-      border-radius: 22px;
-      padding: 8px 17px;
-      font-size: 14px;
-      font-weight: 600;
+      border-radius: 30px;      /* increased */
+      padding: 16px 30px;       /* increased */
+      font-size: 17px;          /* increased */
+      font-weight: 700;
       cursor: pointer;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.20);
+      box-shadow: 0 2px 16px rgba(0,0,0,0.24);
       outline: none;
       display: flex;
       align-items: center;
-      gap: 7px;
+      gap: 11px;
       transition: box-shadow 0.16s, transform 0.12s, background 0.16s;
     }
     .quote-btn:active {
@@ -165,14 +165,14 @@
     }
     .arrow-right {
       display: inline-block;
-      font-size: 15px;
+      font-size: 19px;
       color: #51ebaf;
       margin-left: 2px;
     }
     @media (max-width: 900px) {
       .quote-btn-wrapper { right: 80px; bottom: 16px; }
-      .quote-btn { padding: 7px 10px; font-size: 12px; }
-      .arrow-right { font-size: 12px; }
+      .quote-btn { padding: 10px 16px; font-size: 14px; }
+      .arrow-right { font-size: 14px; }
     }
   </style>
 </head>
