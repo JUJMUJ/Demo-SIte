@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VF CUSTOMS | Bay Area’s Premier Car Customization Shop</title>
+  <link href="https://fonts.googleapis.com/css?family=Oswald:700|Montserrat:400" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background: #181818;
+      color: #fff;
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+    .navbar {
+      background: #232323;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 20px;
+      height: 60px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 26px;
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      transition: color 0.2s;
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+    .navbar a:hover {
+      color: #c950ff;
+    }
+    .hero {
+      position: relative;
+      width: 100vw;
+      height: 100vh; /* Fills the whole screen */
+      background: url('Hero.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero-overlay {
+      position: absolute;
+      top:0; left:0; right:0; bottom:0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7),rgba(0,0,0,0.2));
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+    .hero-content h1 {
+      font-family: 'Oswald', Arial, sans-serif;
+      font-size: 58px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin: 0 0 12px 0;
+    }
+    .hero-content p {
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      color: #ededed;
+      margin: 0 0 30px 0;
+    }
+    .services-section {
+      padding: 70px 0 40px 0;
+      background: #181818;
+      text-align: center;
+    }
+    .services-section h2 {
+      font-size: 36px;
+      letter-spacing: 1px;
+      font-family: 'Oswald', Arial, sans-serif;
+      margin-bottom: 14px;
+    }
+    .services-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 26px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .service-card {
+      background: #252525;
+      padding: 30px 48px;
+      border-radius: 12px;
+      font-size: 20px;
+      min-width: 180px;
+      margin-bottom: 12px;
+      font-family: 'Montserrat', Arial, sans-serif;
+      letter-spacing: 1px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+    }
+    .gallery-section {
+      padding: 70px 0 40px 0;
+      background: #f8f8f8;
+      color: #111;
+    }
+    .gallery-section h2 {
+      font-size: 34px;
+      font-family: 'Oswald', Arial, sans-serif;
+      color: #181818;
+      margin-bottom: 5px;
+    }
+    .gallery-section p {
+      font-size: 19px;
+      color: #333;
+      margin-bottom: 28px;
+    }
+    .gallery-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .gallery-img {
+      border-radius: 10px;
+      max-width: 300px;
+      height: 200px;
+      object-fit: cover;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.13);
+      border: 2px solid #eee;
+    }
+    /* Responsive design */
+    @media (max-width: 900px) {
+      .hero-content h1 { font-size: 38px; }
+      .services-section h2, .gallery-section h2 { font-size: 27px; }
+      .service-card { min-width: 120px; font-size: 16px; }
+      .gallery-img { max-width: 95vw; height: 130px; }
+      .navbar a { font-size: 15px; margin: 0 12px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <a href="#">HOME</a>
+    <a href="#">SERVICES</a>
+    <a href="#">OUR WORK</a>
+    <a href="#">ABOUT US</a>
+    <a href="#">CONTACT</a>
+    <a href="#">BOOK ONLINE</a>
+  </div>
+  <!-- Hero Section -->
+  <div class="hero" style="background-image: url('Hero.jpg');">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>VF CUSTOMS</h1>
+      <p>Bay Area’s Premier Car Customization Shop</p>
+    </div>
+  </div>
+  <!-- Services Section -->
+  <section class="services-section" id="services">
+    <h2>SERVICES</h2>
+    <div class="services-grid">
+      <div class="service-card">PPF</div>
+      <div class="service-card">Vinyl Wraps</div>
+      <div class="service-card">Ceramic Coating</div>
+      <div class="service-card">Window Tints</div>
+      <div class="service-card">Chrome Delete</div>
+      <div class="service-card">Powder Coating Wheels</div>
+      <div class="service-card">Headlight Tint</div>
+      <div class="service-card">Taillight Tint</div>
+    </div>
+  </section>
+  <!-- Gallery Section -->
+  <section class="gallery-section" id="ourwork">
+    <h2>OUR WORK</h2>
+    <p>A collection of cars we've renovated with passion</p>
+    <div class="gallery-row">
+      <img class="gallery-img" src="Gallery1.jpg" alt="Window Tint Install">
+      <img class="gallery-img" src="Gallery2.jpg" alt="Powder Coating Wheels">
+      <img class="gallery-img" src="Gallery3.jpg" alt="Vinyl Wrap Install">
+    </div>
+    <div class="gallery-row">
+      <img class="gallery-img" src="Gallery4.jpg" alt="Chrome Delete">
+      <img class="gallery-img" src="Gallery5.jpeg" alt="PPF Install">
+    </div>
+  </section>
+  <!-- quoteX Agent Embed: Paste your widget script below -->
+  <!-- Example: <script src="YOUR_QUOTEX_AGENT_WIDGET.js"></script> -->
+</body>
+</html>
