@@ -36,7 +36,7 @@
     .hero {
       position: relative;
       width: 100vw;
-      height: 100vh; /* Fills the whole screen */
+      height: 100vh;
       background: url('images/Hero.jpg') center/cover no-repeat;
       display: flex;
       align-items: center;
@@ -136,13 +136,46 @@
       box-shadow: 0 4px 18px rgba(0,0,0,0.13);
       border: 2px solid #eee;
     }
-    /* Responsive design */
-    @media (max-width: 900px) {
-      .hero-content h1 { font-size: 38px; }
-      .services-section h2, .gallery-section h2 { font-size: 27px; }
-      .service-card { min-width: 120px; font-size: 16px; }
-      .gallery-img { max-width: 95vw; height: 130px; }
-      .navbar a { font-size: 15px; margin: 0 12px; }
+    .floating-quote-btn {
+      position: fixed;
+      bottom: 110px;
+      right: 100px;
+      z-index: 1000;
+      background: linear-gradient(135deg, #00ffcc, #00bfff);
+      color: #fff;
+      border: none;
+      padding: 14px 22px;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(0, 255, 204, 0.4);
+      transition: transform 0.3s ease;
+    }
+    .floating-quote-btn:hover {
+      transform: scale(1.08);
+    }
+    .arrow {
+      position: fixed;
+      bottom: 120px;
+      right: 60px;
+      font-size: 28px;
+      color: #00ffcc;
+      animation: bounce 1.2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(6px); }
+    }
+    @media (max-width: 768px) {
+      .floating-quote-btn {
+        right: 70px;
+        bottom: 100px;
+      }
+      .arrow {
+        right: 40px;
+        bottom: 110px;
+      }
     }
   </style>
 </head>
@@ -155,7 +188,7 @@
     <a href="#">CONTACT</a>
     <a href="#">BOOK ONLINE</a>
   </div>
-  <!-- Hero Section -->
+
   <div class="hero" style="background-image: url('images/Hero.jpg');">
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -163,7 +196,7 @@
       <p>Bay Area’s Premier Car Customization Shop</p>
     </div>
   </div>
-  <!-- Services Section -->
+
   <section class="services-section" id="services">
     <h2>SERVICES</h2>
     <div class="services-grid">
@@ -177,7 +210,7 @@
       <div class="service-card">Taillight Tint</div>
     </div>
   </section>
-  <!-- Gallery Section -->
+
   <section class="gallery-section" id="ourwork">
     <h2>OUR WORK</h2>
     <p>A collection of cars we've renovated with passion</p>
@@ -191,78 +224,28 @@
       <img class="gallery-img" src="images/Gallery5.jpeg" alt="PPF Install">
     </div>
   </section>
-  <!-- quoteX Agent Embed: Paste your widget script below -->
+
+  <div class="arrow">➡️</div>
+  <button class="floating-quote-btn" onclick="document.querySelector('#IcQ34S48JAlRm8kGLMg0a')?.click()">💬 Get a Quote</button>
+
   <script>
     (function(){
       if(!window.chatbase||window.chatbase("getState")!=="initialized"){
         window.chatbase=(...arguments)=>{
           if(!window.chatbase.q){window.chatbase.q=[]}
-          window.chatbase.q.push(arguments)
-        };
-        window.chatbase=new Proxy(window.chatbase,{
-          get(target,prop){
-            if(prop==="q"){return target.q}
-            return(...args)=>target(prop,...args)
-          }
-        })
-      }
+          window.chatbase.q.push(arguments)};
+        window.chatbase=new Proxy(window.chatbase,{get(target,prop){
+          if(prop==="q"){return target.q}
+          return(...args)=>target(prop,...args)}})}
       const onLoad=function(){
         const script=document.createElement("script");
         script.src="https://www.chatbase.co/embed.min.js";
         script.id="IcQ34S48JAlRm8kGLMg0a";
         script.domain="www.chatbase.co";
-        document.body.appendChild(script)
-      };
+        document.body.appendChild(script)};
       if(document.readyState==="complete"){onLoad()}
       else{window.addEventListener("load",onLoad)}
     })();
   </script>
-  <!-- Floating Chat Button -->
-<div id="chat-now-button" onclick="scrollToChat()" style="
-  position: fixed;
-  bottom: 100px;
-  right: 30px;
-  background: linear-gradient(135deg, #00ff88, #00bfff);
-  color: black;
-  font-weight: bold;
-  padding: 12px 18px;
-  border-radius: 30px;
-  box-shadow: 0 0 20px rgba(0,255,136,0.6);
-  cursor: pointer;
-  z-index: 1000;
-  font-family: 'Montserrat', sans-serif;
-  transition: transform 0.2s ease;
-">
-  💬 Get a Quote
-</div>
-
-<script>
-  function scrollToChat() {
-    const chatIcon = document.querySelector('#IcQ34S48JAlRm8kGLMg0a');
-    if (chatIcon) {
-      chatIcon.click(); // Trigger the chat
-    }
-  }
-</script>
-
-<!-- Chatbase Glow Animation -->
-<style>
-  #IcQ34S48JAlRm8kGLMg0a {
-    animation: glowPulse 2s infinite;
-  }
-
-  @keyframes glowPulse {
-    0% {
-      box-shadow: 0 0 0px rgba(0, 255, 136, 0.0);
-    }
-    50% {
-      box-shadow: 0 0 12px rgba(0, 255, 136, 0.6);
-    }
-    100% {
-      box-shadow: 0 0 0px rgba(0, 255, 136, 0.0);
-    }
-  }
-</style>
-
 </body>
 </html>
