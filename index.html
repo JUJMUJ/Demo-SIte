@@ -76,7 +76,7 @@
       margin: 0 0 30px 0;
     }
     .services-section {
-      padding: 70px 0 40px 0;
+      padding: 55px 0 40px 0; /* Moved up by 15px */
       background: #181818;
       text-align: center;
     }
@@ -84,26 +84,34 @@
       font-size: 36px;
       letter-spacing: 1px;
       font-family: 'Oswald', Arial, sans-serif;
-      margin-bottom: 14px;
+      margin-bottom: 24px;
     }
+    /* Use CSS Grid for perfect alignment */
     .services-grid {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px 40px;
       justify-content: center;
-      gap: 26px;
+      align-items: stretch;
       max-width: 800px;
       margin: 0 auto;
     }
     .service-card {
       background: #252525;
-      padding: 30px 48px;
+      padding: 30px 0;
       border-radius: 12px;
       font-size: 20px;
       min-width: 180px;
-      margin-bottom: 12px;
       font-family: 'Montserrat', Arial, sans-serif;
       letter-spacing: 1px;
       box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 70px;
+      width: 100%;
+      margin: 0;
+      transition: box-shadow 0.15s;
     }
     .gallery-section {
       padding: 70px 0 40px 0;
@@ -180,6 +188,12 @@
       margin-left: 2px;
     }
     @media (max-width: 900px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 380px;
+      }
+      .service-card { min-width: 120px; font-size: 16px; }
       .quote-btn-wrapper { right: 80px; bottom: 16px; }
       .quote-btn { padding: 10px 16px; font-size: 14px; }
       .arrow-right { font-size: 14px; }
