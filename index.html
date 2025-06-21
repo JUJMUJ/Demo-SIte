@@ -145,22 +145,22 @@
       display: flex;
       align-items: center;
       z-index: 1001;
-      gap: 38px; /* Space between buttons */
+      gap: 130px; /* <<< Increased space between buttons */
     }
     .quote-btn {
-      background: linear-gradient(90deg, #232323 0%, #303030 100%);
+      background: linear-gradient(90deg, #25292c 0%, #232323 100%);
       color: #fff;
       border: none;
-      border-radius: 25px;
-      padding: 10px 20px;
-      font-size: 15px;
+      border-radius: 22px;
+      padding: 8px 17px;
+      font-size: 14px;
       font-weight: 600;
       cursor: pointer;
-      box-shadow: 0 2px 16px rgba(0,0,0,0.26);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.20);
       outline: none;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 7px;
       transition: box-shadow 0.16s, transform 0.12s, background 0.16s;
     }
     .quote-btn:active {
@@ -168,14 +168,14 @@
     }
     .arrow-right {
       display: inline-block;
-      font-size: 17px;
-      color: #6affc3;
+      font-size: 15px;
+      color: #51ebaf;
       margin-left: 2px;
     }
     @media (max-width: 900px) {
-      .quote-chat-container { right: 5vw; bottom: 16px; gap: 20px; }
-      .quote-btn { padding: 8px 13px; font-size: 13px; }
-      .arrow-right { font-size: 14px; }
+      .quote-chat-container { right: 5vw; bottom: 16px; gap: 60px; }
+      .quote-btn { padding: 7px 10px; font-size: 12px; }
+      .arrow-right { font-size: 12px; }
     }
   </style>
 </head>
